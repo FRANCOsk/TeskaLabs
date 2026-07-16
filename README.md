@@ -1,68 +1,87 @@
-# TeskaLabs Training UI App
+# TeskaLabs Training UI
 
-This is a training task for developers who like challenges :)
+A React-based training application built around list, detail, and custom data views. The project demonstrates integration with remote APIs, client-side routing, internationalization, reusable UI components, and a custom Webpack build.
 
-## Prerequisities
+## Highlights
 
-### API endpoints
+- data-oriented React user interface
+- list and detail navigation patterns
+- remote API integration with Axios
+- React Router navigation
+- Material UI, Bootstrap, and ASAB WebUI components
+- internationalization with i18next
+- responsive styling with Emotion and Sass
+- production build with Webpack
+- automated build and dependency-security checks
 
-`https://devtest.teskalabs.com/data`
+## Technology stack
 
-`https://devtest.teskalabs.com/detail/<id>`
+- React 19
+- React Router 7
+- Material UI and Emotion
+- ASAB WebUI Shell and Components
+- Axios
+- i18next
+- Bootstrap and Reactstrap
+- Webpack and Babel
+- Sass
 
-### TeskaLabs WebUI libraries
+## Data sources
 
-[ASAB WebUI Shell Library](https://github.com/TeskaLabs/asab-webui-shell-lib)
+The original exercise uses these endpoints:
 
-[ASAB WebUI Components Library](https://github.com/TeskaLabs/asab-webui-components-lib)
-
-### pnpm
-
-Useful commands:
-
+```text
+https://devtest.teskalabs.com/data
+https://devtest.teskalabs.com/detail/{id}
 ```
-pnpm install
-pnpm start
-pnpm build
+
+Availability and response formats are controlled by the external service.
+
+## Run locally
+
+Requirements:
+
+- Node.js 22 or newer
+- npm 10 or newer
+
+Install dependencies:
+
+```bash
+npm ci
 ```
 
-## The task
+Start the development server:
 
-This task has 3 parts to be extended/implemented - Table, Detail and your custom screens. The requirement is to extend the Table screen, create a Detail screen for Table screen and build your own custom screen. A plus points are for building & deploying the application that we can examine its functionality.
+```bash
+npm start
+```
 
-### Table screen
+Create a production build:
 
-- Extend a Table screen.
-- Use this API for obtaining the data: `https://devtest.teskalabs.com/data`
-- Create a screen with a table using components from [ASAB WebUI Components Library](https://github.com/TeskaLabs/asab-webui-components-lib). Hint: use `DataTable2` (explore the code, it will help you to understand the usage).
-- The table have to display all the `/data` content with one exception - `id` should be displayed on hover over `username`.
-- The table by default use params, therefore there should be a pagination (you need to ensure a proper request to the `/data` endpoint, `DataTable2` has pagination by default).
-- For timestamp values use apropriate components from [ASAB WebUI Components Library](https://github.com/TeskaLabs/asab-webui-components-lib)
-- Add navigation to Detail screen by the `id`.
+```bash
+npm run build
+```
 
-### Detail screen
+## Quality and security checks
 
-- Create a Detail screen.
-- Use this API for obtaining the detail data: `https://devtest.teskalabs.com/detail/<id>`
-- Create a screen with a card(s) which display all the information retrieved from the `/detail/<id>` endpoint.
-- You can render the data in 1 or several cards based on your choice.
-- You can use components from [ASAB WebUI Components Library](https://github.com/TeskaLabs/asab-webui-components-lib).
+Run the same build check used by CI:
 
-### Your own screen
+```bash
+npm run check
+```
 
-- Create your own screen.
-- The screen should use any free API data source (or you can connect it to your backend, if you dare to).
-- Use components of your choice and design the screen as you wish (you can install any library/framework which you are used to use).
+Check installed dependencies for high-severity vulnerabilities:
 
-### Plus points
+```bash
+npm run audit
+```
 
-- Add translations to the Table header and Detail card.
-- Use bootstrap icons for Table header and Detail card.
-- Implement navigation back from Detail screen to Table screen.
-- Build & deploy the application (provide the functional link).
+GitHub Actions executes a clean installation, production build, and npm security audit for every pull request. Dependabot checks npm and GitHub Actions dependencies weekly.
 
-## The expected output
+## Project background
 
-- Attach the link of your public github/gitlab where the TeskaLabs Training UI App is being cloned and extended. We will go through the code.
+This repository originated as a frontend implementation exercise. The assignment covered a paginated table view, a record-detail view, navigation between screens, translations, icons, and a custom data screen. The repository is retained as a portfolio example of working with an unfamiliar component library and an existing Webpack-based application structure.
 
-- Did you complete this task? Send the result (links) to [frantisek.pesek@teskalabs.com](mailto:frantisek.pesek@teskalabs.com)
+## Development notes
+
+The application depends on external APIs and third-party component libraries. When upgrading dependencies, review peer-dependency compatibility and verify the production build before merging.
