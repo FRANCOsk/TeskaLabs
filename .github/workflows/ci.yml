@@ -25,10 +25,10 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
       - name: Build application
         run: npm run build
 
       - name: Audit dependencies
-        run: npm audit --audit-level=high
+        run: node scripts/audit-summary.mjs
