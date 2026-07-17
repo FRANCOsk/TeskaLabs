@@ -22,7 +22,7 @@
     "@babel/runtime": "^7.29.2",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@microlink/react-json-view": "^1.26.2",
+    "@microlink/react-json-view": "^1.31.22",
     "@mui/icons-material": "^9.0.0",
     "@mui/material": "^9.0.0",
     "@popperjs/core": "^2.11.8",
