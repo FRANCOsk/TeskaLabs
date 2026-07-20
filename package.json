@@ -24,7 +24,7 @@
     "@emotion/styled": "^11.14.1",
     "@microlink/react-json-view": "^1.31.22",
     "@mui/icons-material": "^9.0.0",
-    "@mui/material": "^9.0.0",
+    "@mui/material": "^9.2.0",
     "@popperjs/core": "^2.11.8",
     "asab_webui_components": "^27.4.2",
     "asab_webui_shell": "^27.4.4",
